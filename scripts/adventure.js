@@ -20,15 +20,14 @@ create potions, spell books and glass artifacts
 */
 alert("You are looking for the grand castle of mount boggard.  This adventure will test your mettle. Will you find gorious success or miserable failure?")
 
-var direction = ["You head North"]
+var direction = ["You head North over the steep peak.","You head North West through the climbing forest.","You head North East through the winding crags."]
 
 function randomNumber(range){
     return (Math.random(Math.round) * range);
 }
 
-alert(randomNumer[])
+alert(direction[randomNumber(direction -1)]);
 
-var distance = math.round(math.random() * 100);
 
 var playerOne = {
 
@@ -46,6 +45,9 @@ var playerOne = {
 
 };
 
+
+
+
 if(playerOne.playerType = "magician"){
     playerOne.magic = 60
 }
@@ -60,7 +62,7 @@ if(playerOne.playerType = "tactician") {
 
 
 
-function enemy(name, health, magic, tenacity, damage) {
+function Enemy(name, health, magic, tenacity, damage) {
 
     this.name = name
     this.health = health
@@ -70,19 +72,56 @@ function enemy(name, health, magic, tenacity, damage) {
 
 }
 
-switch {
-    case (magic = 60):
-        window.alert("You equip your blade wand");
-        break;
-    case (tenacity = 40):
-        window.alert("You equip your flute of legend");
-        break;
-    case (damage = 60)
-        window.alert("You equip your razor cutter");
+var mrTroll = new Enemy("Troll", 60, 10, 20, 60);
+var mrReaper = new Enemy("Reaper", 60, 45, 40, 35);
+var mrDragon = new Enemy("Dragon", 80, 35, 40, 40);
+
+var startWeapons = prompt("What weapon do you start with? A blade wand, a razor axe or a flute of legend?").toLowerCase;
+
+switch (startWeapons){
+    case "blade wand":
+        alert("You equip the blade wand");
+        playerOne.magic + 5;
+    case "razor axe":
+        alert("You equip the razor axe");
+        playerOne.damage + 5;
+    case "flute of legend":
+        alert("You equip the flute of legend");
+        playerOne.tenacity + 5;
     default:
-        window.alert("You equip your letter opener");
+        alert("You equip a shiv")
+        playerOne.damage + 1;
+
 }
 
+var newItems = ["magic acorn","boggard map","breaker ball","golden scarf","gilded leaf"];
+
+function startItems() {
+    for(var i = 0; i < 5; i++){
+        alert("You gain " + newItems[i]);
+    }
+}
+
+startItems()
+
+alert("You find a treasure chest");
+
+var chest = ["magic branch","scrying orb","panda token", "bag of sugar","small dagger"];
+
+function chestItems(){
+do {
+    var i = 0;
+    i++;
+    alert("You gain" + chest[i]);
+} while(i < 5);
+
+}
+
+chestItems()
+
+console.log("You reach the peak");
+console.log("You find a dragon");
+console.log("He teaches you dragon language");
 
 
 
